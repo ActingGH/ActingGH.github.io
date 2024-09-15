@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Linux基础入门 | Acting个人博客</title><meta name="author" content="Acting"><meta name="copyright" content="Acting"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux目录结构 顶级目录 &#x2F; 有且只有一个 Windows \ 表示层级关系 Linux &#x2F; 表示层级关系  Linux命令入门命令基础command [-options] [parameter]  command 命令本身 -options 命令选项 行为细节 parameter 命令参数 指向目标  ls命令入门ls 列出目录下的内容 ls [-a -l -h] [li">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基础入门">
+<meta property="og:url" content="http://example.com/2023/12/30/Linux%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Acting个人博客">
+<meta property="og:description" content="Linux目录结构 顶级目录 &#x2F; 有且只有一个 Windows \ 表示层级关系 Linux &#x2F; 表示层级关系  Linux命令入门命令基础command [-options] [parameter]  command 命令本身 -options 命令选项 行为细节 parameter 命令参数 指向目标  ls命令入门ls 列出目录下的内容 ls [-a -l -h] [li">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/touxiang.jpg">
+<meta property="article:published_time" content="2023-12-30T08:34:20.000Z">
+<meta property="article:modified_time" content="2024-09-15T02:57:22.612Z">
+<meta property="article:author" content="Acting">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/touxiang.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/30/Linux%E5%AD%A6%E4%B9%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux基础入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-15 10:57:22'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Acting个人博客"><span class="site-name">Acting个人博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux基础入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-09-15T02:57:22.612Z" title="Updated 2024-09-15 10:57:22">2024-09-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux基础入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><ul>
+<li>顶级目录 &#x2F; 有且只有一个</li>
+<li>Windows \ 表示层级关系</li>
+<li>Linux &#x2F; 表示层级关系</li>
+</ul>
+<h2 id="Linux命令入门"><a href="#Linux命令入门" class="headerlink" title="Linux命令入门"></a>Linux命令入门</h2><h3 id="命令基础"><a href="#命令基础" class="headerlink" title="命令基础"></a>命令基础</h3><p>command [-options] [parameter]</p>
+<ul>
+<li>command 命令本身</li>
+<li>-options 命令选项 行为细节</li>
+<li>parameter 命令参数 指向目标</li>
+</ul>
+<h3 id="ls命令入门"><a href="#ls命令入门" class="headerlink" title="ls命令入门"></a>ls命令入门</h3><p>ls 列出目录下的内容</p>
+<p>ls [-a -l -h] [linux路径]</p>
+<ul>
+<li>-a all 列出全部文件 包括隐藏（ 以. 开头是隐藏文件夹）</li>
+<li>-l 竖向排列 并展示更多信息</li>
+<li>ls -l -a 即 ls -la</li>
+<li>-h 文件大小带单位</li>
+</ul>
+<p>cd切换工作目录（change directory）</p>
+<p>cd [linux路径]</p>
+<p>pwd （print work directory）</p>
+<p>查看当前所在的工作目录</p>
+<h4 id="特殊路径符"><a href="#特殊路径符" class="headerlink" title="特殊路径符"></a>特殊路径符</h4><ul>
+<li>. 表示当前目录</li>
+<li>.. 表示上一级目录 ..&#x2F;.. 退回两级</li>
+<li>~ 表示home目录</li>
+</ul>
+<h4 id="创建目录命令"><a href="#创建目录命令" class="headerlink" title="创建目录命令"></a>创建目录命令</h4><ul>
+<li>mkdir （make directory）</li>
+<li>mkdir [-p] linux路径</li>
+<li>-p 表示自动创建不存在的父目录 适用创建连续多层级的目录</li>
+<li>确保在home目录内</li>
+</ul>
+<h4 id="文件命令"><a href="#文件命令" class="headerlink" title="文件命令"></a>文件命令</h4><ul>
+<li><p>touch 创建文件</p>
+<ul>
+<li>touch Linux路径</li>
+</ul>
+</li>
+<li><p>cat  查看文件内容</p>
+<ul>
+<li>cat Linux路径</li>
+</ul>
+</li>
+<li><p>more 支持翻页查看文件内容</p>
+<ul>
+<li>more Linux路径</li>
+<li>空格 翻页</li>
+<li>q 退出</li>
+</ul>
+</li>
+<li><p>cp 复制文件夹</p>
+<ul>
+<li>cp [-r] 参数1 参数2</li>
+<li>-r用于复制文件夹</li>
+<li>参数1 被复制文件</li>
+<li>参数2 复制去的地方</li>
+</ul>
+</li>
+<li><p>mv 文件移动 改名</p>
+<ul>
+<li>mv 参数1 参数2</li>
+</ul>
+</li>
+<li><p>rm 删除文件 文件夹</p>
+<ul>
+<li>rm [-r -f] 参数1 参数2….</li>
+<li>-r 删除文件夹</li>
+<li>-f force 强制删除 不会出现确认信息</li>
+<li>通配符<ul>
+<li>test* 匹配以test开头的文件</li>
+<li>*test* 匹配包含test的文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h4><ul>
+<li>which <ul>
+<li>which 要查找的命令</li>
+<li>找到二进制可执行文件</li>
+</ul>
+</li>
+<li>find <ul>
+<li>find 起始路径 -name “被查找的文件名”</li>
+<li>find 起始路径 -size +|- n [kMG]<ul>
+<li>+表示大于 - 表示小于</li>
+<li>n 表示大小</li>
+<li>kMG表示单位</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="过滤命令"><a href="#过滤命令" class="headerlink" title="过滤命令"></a>过滤命令</h4><ul>
+<li>grep<ul>
+<li>grep [-n] 关键字 文件路径</li>
+<li>-n 表示在结果中显示匹配的行的行号</li>
+<li>关键字 表示过滤的关键字</li>
+<li>文件路径 可作为内容输入端口</li>
+</ul>
+</li>
+</ul>
+<h4 id="数量统计"><a href="#数量统计" class="headerlink" title="数量统计"></a>数量统计</h4><ul>
+<li>wc<ul>
+<li>wc [-c -m -l -w] 文件路径</li>
+<li>c 统计bytes数量</li>
+<li>m 统计字符数量 symble</li>
+<li>l 统计行数</li>
+<li>w 统计单词数量</li>
+<li>文件路径 可作为内容输入端口</li>
+</ul>
+</li>
+</ul>
+<p>管道符</p>
+<ul>
+<li>|<ul>
+<li>将左边的结果 作为右边的输入</li>
+</ul>
+</li>
+</ul>
+<p>echo命令</p>
+<ul>
+<li>echo 输出内容</li>
+</ul>
+<p>反引号 &#96;</p>
+<ul>
+<li>执行被包围的内容</li>
+</ul>
+<p>重定向符</p>
+<ul>
+<li>&gt; 左侧内容覆盖到指定文件中</li>
+<li>&gt;&gt;左侧内容追加到指定文件中<ul>
+<li>自动换行</li>
+</ul>
+</li>
+</ul>
+<p>tail</p>
+<ul>
+<li>查看文件尾部内容</li>
+<li>tail [-f -num] linux路径</li>
+<li>-f 追踪</li>
+<li>-num 查看尾部多好行</li>
+<li>ctrl + c 退出</li>
+</ul>
+<p>vi&#x2F;vim 编辑器</p>
+<ul>
+<li>vim 文件路径</li>
+<li>不存在即创建新文件</li>
+<li>i 进入输入模式  esc回到命令模式</li>
+<li>dd 删除 u撤回</li>
+<li>：wq 保存退出</li>
+<li><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240130182550029.png" alt="image-20240130182550029"></li>
+<li><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240130182903565.png" alt="image-20240130182903565"></li>
+<li><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240130183348632.png" alt="image-20240130183348632"></li>
+</ul>
+<h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><ul>
+<li><p>root用户（超级管理员）</p>
+<ul>
+<li>su - root  （Switch USER）</li>
+<li>退出 exit</li>
+</ul>
+</li>
+<li><p>授权命令</p>
+<ul>
+<li>sudo 其他命令</li>
+<li>需要为普通用户配置sudo认证<ul>
+<li>切换root用户 </li>
+<li>visudo</li>
+<li>acting ALL&#x3D;（ALL） NOPASSWORD</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>用户，用户组</p>
+<ul>
+<li>groupadd 用户组名</li>
+<li>groupdel 用户组名</li>
+</ul>
+</li>
+</ul>
+<h4 id="应用商店"><a href="#应用商店" class="headerlink" title="应用商店"></a>应用商店</h4><p>yum RPM包软件管理器</p>
+<ul>
+<li>yum [-y] [install   remove  search] 软件名称<ul>
+<li>y 自动确认 无需手动确认</li>
+</ul>
+</li>
+</ul>
+<p>systemctl</p>
+<ul>
+<li>systemctl 指令 服务名</li>
+<li>指令<ul>
+<li>stop停止</li>
+<li>start 启动</li>
+<li>status 查看状态</li>
+<li>enable 开启开机自启动</li>
+<li>disable 关闭开机自启</li>
+</ul>
+</li>
+</ul>
+<h4 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h4><p>ln -s 参数1 参数2</p>
+<ul>
+<li>参数1 被链接的文件</li>
+<li>参数2 链接去的目的地</li>
+</ul>
+<h4 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h4><p>date [-d] [+格式化字符串]</p>
+<ul>
+<li>-d 一般用于时间计算</li>
+</ul>
+<h4 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h4><p>127.0.0.1 指代本机</p>
+<p>0.0.0.0 </p>
+<p>可以指代本机</p>
+<p>在一些ip限制中 表示所有ip</p>
+<p>端口绑定中确定绑定关系</p>
+<h4 id="主机名"><a href="#主机名" class="headerlink" title="主机名"></a>主机名</h4><p>hostnamectl set-hostname 主机名</p>
+<p>域名解析  dns服务器（114.114.114.114，8.8.8.8）</p>
+<p>私人地址本</p>
+<p>Windows   C:\Windows\System32\drivers\etc\hosts</p>
+<p>Linux            &#x2F;etc&#x2F;hosts</p>
+<p>DHCP 动态获取IP地址 重启设备都会重新获取</p>
+<p>ping命令</p>
+<p>ping [-c num] ip或主机名</p>
+<ul>
+<li>c 检查次数 不使用将无限次数</li>
+</ul>
+<p>wget [-b] url</p>
+<ul>
+<li>b 后台下载</li>
+</ul>
+<p>tomcat 启动 进入&#x2F;usr&#x2F;local&#x2F;tomcat </p>
+<p>&#x2F;bin 使用sh  startup.sh</p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240506222111780.png" alt="image-20240506222111780"></p>
+<p>ip addr 查看ens33 ip地址</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1DY5WDOZTqkG5hEvsIFWgWw">https://pan.baidu.com/s/1DY5WDOZTqkG5hEvsIFWgWw</a><br>提取码：04au</p>
+<p>启动mysql服务</p>
+<p>systemctl start mysqld</p>
+<p>后台运行Springboot 并将日志输出到文件</p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240512121557606.png" alt="image-20240512121557606"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Acting</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/30/Linux%E5%AD%A6%E4%B9%A0/">http://example.com/2023/12/30/Linux%E5%AD%A6%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="/images/touxiang.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/30/git%E5%AD%A6%E4%B9%A0/" title="git基础操作"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">git基础操作</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/30/MySql%E9%AB%98%E7%BA%A7/" title="Mysql高级"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Mysql高级</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Acting</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux"><span class="toc-number">1.</span> <span class="toc-text">Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%91%BD%E4%BB%A4%E5%85%A5%E9%97%A8"><span class="toc-number">1.2.</span> <span class="toc-text">Linux命令入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%9F%BA%E7%A1%80"><span class="toc-number">1.2.1.</span> <span class="toc-text">命令基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4%E5%85%A5%E9%97%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text">ls命令入门</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84%E7%AC%A6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">特殊路径符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">创建目录命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">文件命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">查找命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">过滤命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E9%87%8F%E7%BB%9F%E8%AE%A1"><span class="toc-number">1.2.2.6.</span> <span class="toc-text">数量统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="toc-number">1.2.2.7.</span> <span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="toc-number">1.2.2.8.</span> <span class="toc-text">应用商店</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="toc-number">1.2.2.9.</span> <span class="toc-text">软链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.2.10.</span> <span class="toc-text">时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ip"><span class="toc-number">1.2.2.11.</span> <span class="toc-text">ip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-number">1.2.2.12.</span> <span class="toc-text">主机名</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/git%E5%AD%A6%E4%B9%A0/" title="git基础操作">git基础操作</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/Linux%E5%AD%A6%E4%B9%A0/" title="Linux基础入门">Linux基础入门</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/MySql%E9%AB%98%E7%BA%A7/" title="Mysql高级">Mysql高级</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/Docker%E5%AD%A6%E4%B9%A0/" title="docker基础">docker基础</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/" title="微服务">微服务</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Acting</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

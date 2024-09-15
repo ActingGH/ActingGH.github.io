@@ -1,0 +1,516 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Mysql基础 | Acting个人博客</title><meta name="author" content="Acting"><meta name="copyright" content="Acting"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MySQL基础篇学习基础 访问数据库 属性 c 常规 包含目录 server include 链接器 常规 附加库目录 server lib 输入 依赖库 libmysql&#x2F;lib  命令行操作数据库 mysql -u root -p 要先net start mysql80启动数据库服务器 MYSQL数据类型 tinyint 小整数值   smallint 大整数数值  float 单精">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql基础">
+<meta property="og:url" content="http://example.com/2023/12/06/MySQL/index.html">
+<meta property="og:site_name" content="Acting个人博客">
+<meta property="og:description" content="MySQL基础篇学习基础 访问数据库 属性 c 常规 包含目录 server include 链接器 常规 附加库目录 server lib 输入 依赖库 libmysql&#x2F;lib  命令行操作数据库 mysql -u root -p 要先net start mysql80启动数据库服务器 MYSQL数据类型 tinyint 小整数值   smallint 大整数数值  float 单精">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/touxiang.jpg">
+<meta property="article:published_time" content="2023-12-06T07:37:32.000Z">
+<meta property="article:modified_time" content="2024-09-15T02:55:46.638Z">
+<meta property="article:author" content="Acting">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/touxiang.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/06/MySQL/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Mysql基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-15 10:55:46'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Acting个人博客"><span class="site-name">Acting个人博客</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Mysql基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-06T07:37:32.000Z" title="Created 2023-12-06 15:37:32">2023-12-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-09-15T02:55:46.638Z" title="Updated 2024-09-15 10:55:46">2024-09-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Mysql基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="MySQL基础篇学习"><a href="#MySQL基础篇学习" class="headerlink" title="MySQL基础篇学习"></a>MySQL基础篇学习</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240513204901071.png" alt="image-20240513204901071"></p>
+<h3 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h3><ol>
+<li>属性 c 常规 包含目录 server include</li>
+<li>链接器 常规 附加库目录 server lib</li>
+<li>输入 依赖库 libmysql&#x2F;lib</li>
+</ol>
+<p>命令行操作数据库</p>
+<p><code>mysql -u root -p</code></p>
+<p>要先<code>net start mysql80</code>启动数据库服务器</p>
+<h3 id="MYSQL数据类型"><a href="#MYSQL数据类型" class="headerlink" title="MYSQL数据类型"></a>MYSQL数据类型</h3><ul>
+<li><p>tinyint 小整数值 </p>
+</li>
+<li><p>smallint 大整数数值</p>
+</li>
+<li><p>float 单精度浮点数值</p>
+</li>
+<li><p>double 双精度浮点数值</p>
+</li>
+<li><p>char 定长字符串</p>
+</li>
+<li><p>varchar 变长字符串</p>
+</li>
+<li><p>tinytext 短文本字符串</p>
+</li>
+<li><p>data 日期值 YYYY-MM-DD</p>
+</li>
+<li><p>time 时间值或持续时间值   HH：MM：SS</p>
+</li>
+<li><p>year 年份值 YYYY</p>
+</li>
+</ul>
+<h2 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL 数据定义语言"></a>DDL 数据定义语言</h2><h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><ul>
+<li><p>查询所有数据库 <code>SHOW DATABASES;</code></p>
+</li>
+<li><p>查看当前数据库 <code>SELECT DATABASE();</code></p>
+</li>
+<li><p>创建数据库 <code>CREATE DATABASE [IF EXISTIS]数据库名 [DEFAULT CHARSET 字符集] ;</code></p>
+</li>
+<li><p>删除数据库 <code>DROP DATABASE[IF EXISTS] 数据库名;</code></p>
+</li>
+<li><p>切换数据库 <code>USE 数据库名;</code></p>
+</li>
+<li><p>查询当前数据库所有表 <code>SHOW TABLES；</code></p>
+</li>
+</ul>
+<h3 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h3><ul>
+<li><p>查询表结构 <code>DESC 表名；</code></p>
+</li>
+<li><p>查询创建表语句 <code>SHOW CREATE TABLE 表名；</code></p>
+</li>
+<li><p>创建表 <code>CREATE TABLE 表名（字段 字段类型 [COMMENT 注释]）[COMMENT 注释]；</code></p>
+</li>
+<li><p>删除表 <code>DROP TABLE 表名；</code></p>
+</li>
+<li><p>删除表内容 <code>TRUNCATE ；</code></p>
+</li>
+<li><p>修改表名 ALTER TABLE 表名 RENAME TO 新表名</p>
+</li>
+</ul>
+<h3 id="字段操作"><a href="#字段操作" class="headerlink" title="字段操作"></a>字段操作</h3><ul>
+<li><p>修改字段 <code>ALTER TABLE 表名 ADD 字段名 类型（长度）[COMMENT 注释]；</code></p>
+</li>
+<li><p>修改字段数据类型 <code>ALTER TABLE 表名 MODIFY 字段名 新数据类型（长度）；</code></p>
+</li>
+<li><p>修改数据类型和字段名称 	<code>ALTER TABLE 表明 CHANGE 旧字段名 新字段名 新类型（长度）[COMMENT 注释]；</code></p>
+</li>
+<li><p>删除字段 <code>ALTER TABLE 表名 DROP 字段名；</code></p>
+</li>
+</ul>
+<h2 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML  数据操作语言"></a>DML  数据操作语言</h2><h4 id="添加数据-INSERT"><a href="#添加数据-INSERT" class="headerlink" title="添加数据 INSERT"></a>添加数据 INSERT</h4><p><code>INSERT INTO 表名（字段）VALUES(值)；</code></p>
+<h4 id="修改数据-UPDATA"><a href="#修改数据-UPDATA" class="headerlink" title="修改数据 UPDATA"></a>修改数据 UPDATA</h4><p><code>UPDATA 表名 SET 字段名=值 [WHERE 条件]；</code></p>
+<h4 id="删除数据-DELETE"><a href="#删除数据-DELETE" class="headerlink" title="删除数据 DELETE"></a>删除数据 DELETE</h4><p><code>DELETE FROM 表名 WHERE 条件；</code></p>
+<h2 id="DQL-数据查询语言"><a href="#DQL-数据查询语言" class="headerlink" title="DQL 数据查询语言"></a>DQL 数据查询语言</h2><ul>
+<li><p>SELECT 字段列表</p>
+</li>
+<li><p>FROM 表名列表</p>
+</li>
+<li><p>WHERE 条件列表</p>
+<ul>
+<li><p>in 在其中之一</p>
+</li>
+<li><p>not like </p>
+<ul>
+<li><p>%表示任何字符出现任意次数</p>
+</li>
+<li><p>_表示单个字符</p>
+</li>
+<li><p>[]表示一个字符集</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="GROUP-BY-分组字段列表"><a href="#GROUP-BY-分组字段列表" class="headerlink" title="GROUP BY 分组字段列表"></a>GROUP BY 分组字段列表</h2></li>
+<li><p>HAVING 分组后条件列表</p>
+</li>
+<li><p>ORDER BY 排序字段列表</p>
+<ul>
+<li><p>字段 默认升序 加 DESC 是降序</p>
+</li>
+<li><p>between   and  前闭后闭</p>
+</li>
+</ul>
+</li>
+<li><p>LIMIT 分页参数</p>
+<ul>
+<li>limit 起始索引 每页展示记录数</li>
+</ul>
+</li>
+<li><p>DISTINCT 数据去重</p>
+</li>
+</ul>
+<h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><ul>
+<li><p>一对多</p>
+<ul>
+<li><p>部门 – 员工</p>
+</li>
+<li><p>多的一边建立外键，指向另一方的主键</p>
+</li>
+<li><p>多对多</p>
+<ul>
+<li>学生 – 课程</li>
+<li>中间表，至少两个外键分别关联两个主键</li>
+</ul>
+</li>
+<li><p>一对一 </p>
+<ul>
+<li>用户 用户详情</li>
+<li>任意一方加入外键 设置外键为唯一约束 UNIQUE</li>
+</ul>
+</li>
+<li><p>笛卡尔查询</p>
+<ul>
+<li>两张表所有组合情况</li>
+<li>消除  WHERE 表名.字段 &#x3D; 表名.字段</li>
+</ul>
+</li>
+<li><p>内连接 相当于查询A，B交集部分数据</p>
+<ul>
+<li>隐式内连接<ul>
+<li>SELECT 字段列表 FROM 表1，表2 WHERE；</li>
+</ul>
+</li>
+<li>显式内连接·<ul>
+<li>SELECT 字段列表 FROM 表1【INNER】JOIN 表2 ON 连接条件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>外连接  </p>
+<ul>
+<li>左外连接<ul>
+<li>SELECT 字段列表 FROM 表1 LEFT【OUTER】JOIN 表2 ON 条件</li>
+</ul>
+</li>
+<li>右外连接<ul>
+<li>SELECT 字段列表 FROM 表1 RIGHT 【OUTER】JOIN 表2 ON条件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>自连接 </p>
+<ul>
+<li>当前表与自身连接查询 必须使用表别名</li>
+<li>SELECT 字段列表 FROM 表1 别名A JOIN 表1 别名B ON 条件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="DCL-数据库权限"><a href="#DCL-数据库权限" class="headerlink" title="DCL 数据库权限"></a>DCL 数据库权限</h2><h3 id="管理用户"><a href="#管理用户" class="headerlink" title="管理用户"></a>管理用户</h3><ul>
+<li>查询用户 </li>
+<li><ul>
+<li>USE mysql；</li>
+<li>SELECT *FROM user；</li>
+</ul>
+</li>
+<li>创建用户</li>
+<li><ul>
+<li>CREATE USER 用户名@主机名 IDENTIFIED BY密码；</li>
+</ul>
+</li>
+<li>修改用户密码<ul>
+<li>ALTER USER 用户名@主机名 INENTIFIED 原密码 BY 新密码；</li>
+</ul>
+</li>
+<li>删除用户<ul>
+<li>DROP USER 用户名@主机名；</li>
+</ul>
+</li>
+<li>任意主机名 %</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ul>
+<li>主键 PRIMARY KEY</li>
+<li>自动增长 AUTO_INCREMENT</li>
+<li>不为空 NOT NULL</li>
+<li>唯一 UNIQUE</li>
+<li>默认为1 DEFAULT</li>
+</ul>
+<p>外键约束</p>
+<p>ALTER TABLE 表名 ADD CONSITRINT 外键名称 FOREIGN KEY （外键字段名）REFERENCES 主表（主表列名）</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240531232254682.png" alt="image-20240531232254682"></p>
+<p>字符串截取 substring（字符串，起始位置，截取字符数）</p>
+<p>字符串拼接 concat （字符串1，字符串2……）</p>
+<p>字母大写 upper（字符串）</p>
+<p>DATE_FORMAT(NOW(), ‘%d&#x2F;%m&#x2F;%Y’) AS formatted_date;</p>
+<h3 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h3><p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240531232929533.png" alt="image-20240531232929533"></p>
+<h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240531233054277.png" alt="image-20240531233054277"></p>
+<h3 id="流程函数"><a href="#流程函数" class="headerlink" title="流程函数"></a>流程函数</h3><p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240531233343351.png" alt="image-20240531233343351"></p>
+<h1 id="进阶篇学习"><a href="#进阶篇学习" class="headerlink" title="进阶篇学习"></a>进阶篇学习</h1><h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><p>体系结构</p>
+<ul>
+<li>连接层 </li>
+<li>服务层</li>
+<li>引擎层</li>
+<li>存储层</li>
+</ul>
+<p>存储引擎 表类型 </p>
+<p>查看引擎 查看建表语句</p>
+<p>指定存储引擎 ENGINE </p>
+<p>SHOW  engins  </p>
+<h3 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h3><p>默认存储引擎</p>
+<ul>
+<li>遵循ACID模型 支持<strong>事务</strong></li>
+<li><strong>行级锁</strong> 提高并发访问性能</li>
+<li>支持<strong>外键</strong> FOREIGN KEY约束 保证数据完整性和正确性</li>
+</ul>
+<p>对应文件 xxx.ibd  表空间文件{结构 数据 索引}</p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240223113432741.png" alt="image-20240223113432741"></p>
+<p>应用：对事务完整性比较高 在并发条件下要求数据的一致性</p>
+<h3 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h3><p>早期默认存储引擎</p>
+<ul>
+<li>不支持事务 不支持外键</li>
+<li>支持表锁 不支持行锁</li>
+<li>访问速度快</li>
+</ul>
+<p>xxx.MYD（数据）  xxx.MYI （索引）      xxx.sdi(表结构)</p>
+<p>应用：数据操作以读取和插入为主 很少更新或删除 对事务完整性并发性瑶琴斌不是很高</p>
+<h3 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h3><p>存储在内存 只能作为临时表或缓存使用</p>
+<ul>
+<li>内存存放</li>
+<li>hash索引（默认）</li>
+</ul>
+<p>应用：临时表或缓存  对表的大小有限制</p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>帮助mysql高效获取数据的数据结构</p>
+<p>无索引  全表扫描 </p>
+<p>索引</p>
+<ul>
+<li>优点  调高检索效率  </li>
+<li>缺点 降低增删改的效率</li>
+</ul>
+<h3 id="索引结构"><a href="#索引结构" class="headerlink" title="索引结构"></a>索引结构</h3><p>在存储引擎层实现 不同引擎存储不同结构</p>
+<ul>
+<li>B+Tree索引  默认</li>
+<li>Hash索引</li>
+<li>R-Tree 空间索引</li>
+<li>FUll-text 全文索引</li>
+</ul>
+<h4 id="B树-多路平衡查找树"><a href="#B树-多路平衡查找树" class="headerlink" title="B树  多路平衡查找树"></a>B树  多路平衡查找树</h4><p><strong>度数</strong> 一个节点子节点的个数  每个节点最多存储n个指针 n-1个值</p>
+<p>B+树  </p>
+<ul>
+<li>所有元素都会出现在叶子节点 </li>
+<li>叶子节点形成一个单向链表</li>
+</ul>
+<p><strong>在mysql中 优化了B+树</strong> 增加一个指向相邻叶子节点的链表指针 形成了带有顺序指针的b+树 提高区间访问性能</p>
+<h4 id="Hash索引"><a href="#Hash索引" class="headerlink" title="Hash索引"></a>Hash索引</h4><ul>
+<li>不支持范围查找</li>
+<li>无法利用索引进行排序</li>
+<li>哈希冲突 使用链表解决</li>
+<li>查询效率高 只需要查询一次 通常高于B+树</li>
+</ul>
+<h3 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h3><ul>
+<li>主键索引  primary</li>
+<li>唯一索引  uniquee</li>
+<li>常规索引 快速定位数据</li>
+<li>全文索引  fulltext</li>
+</ul>
+<p>innodb存储引擎 根据索引存储形式分为</p>
+<p><strong>聚焦索引</strong>： 将数据存储与索引放到了一起 索引结构的叶子节点保存了<strong>行数据</strong> 必须有而且只有一个</p>
+<p><strong>二级索引</strong> ：数据与索引分开存储 索引结构的叶子节点关联的是对应的<strong>主键</strong></p>
+<p><strong>回表查询</strong>：先走二级索引找到主键值 然后走聚焦索引找到row</p>
+<p><strong>创建索引：</strong><code>create [unique | fulltext] index index_name on table_name (index_col_name...);</code></p>
+<p>一个索引关联多个字段 称为 联合索引</p>
+<p><strong>查看索引：</strong> <code>SHOW index from table_name</code></p>
+<p><strong>删除索引：</strong> <code>DROP index index_name on table_name</code></p>
+<h3 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h3><ul>
+<li><p>明确 sql 执行频率 增删改查所占的频率</p>
+<p><code>show [session|globale] sattus like &#39;com_______&#39;;</code>服务器状态信息</p>
+</li>
+<li><p><strong>慢查询日志</strong></p>
+<ul>
+<li>记录所有执行时间超过指定参数的sql语句的日志</li>
+<li>慢查询日志默认没有开启 需要在配置文件配置 <code>/etc/my.cnf</code> 添加 <code>slow_query_log=1</code> <code>long_query_time=2</code></li>
+<li>查询是否开启 <code>show variables like &#39;slow_query_log&#39;;</code></li>
+<li>只会记录超过预定时间的操作才回记录</li>
+</ul>
+</li>
+<li><p>profile 详情</p>
+<ul>
+<li><code>show profiles</code> 查看耗时都去了哪里</li>
+<li><code>SELECT @@have_profiling</code>参数查看是否支持profile操作</li>
+<li><code>set profiling=1</code>开启</li>
+<li>查看指定query_id 的sql语句各个阶段的耗时 <code>show profile for query_id;</code></li>
+<li>查看cpu使用情况 <code>show profile cpu for query_id</code></li>
+</ul>
+</li>
+<li><p>explain执行计划</p>
+<ul>
+<li>在任意select语句之前添加关键字 <code>explain</code></li>
+<li>id 表示查询语句中执行select自居或者是操作表的顺序 id相同 按照从上往下执行  如果不同 数值越大先执行</li>
+<li>select_type  表示select的类型 simple（简单查询）primary（主查询 外层查询） union（union中的第二个或者后面的查询语句）subquery（select&#x2F;where 之后包含了子查询）</li>
+<li>type 连接类型</li>
+<li>pssible_key 显示可能应用在这张表上的索引</li>
+<li>key 实际使用的索引</li>
+<li>key_len 索引中使用的字节数</li>
+<li>rows 预估值 执行查询的行数</li>
+<li>filtered 行数占需要读取的行数的百分比</li>
+</ul>
+</li>
+</ul>
+<h3 id="索引使用"><a href="#索引使用" class="headerlink" title="索引使用"></a>索引使用</h3><ul>
+<li>最左前缀法则</li>
+</ul>
+<p>出现了联合索引 从索引的最左列开始查询 并且不跳过索引中发的列</p>
+<ul>
+<li>索引列运算</li>
+</ul>
+<p>不要在索引列上进行运算 索引将失效</p>
+<ul>
+<li>字符串索引添加引号</li>
+</ul>
+<p>否则索引将失效</p>
+<ul>
+<li>模糊查询</li>
+</ul>
+<p>尾部模糊 不会失效  头部模糊 索引失效</p>
+<ul>
+<li>or连接条件</li>
+</ul>
+<p>or前条件中有索引 后面没有索引 那么涉及的索引不会用到</p>
+<ul>
+<li>覆盖索引</li>
+</ul>
+<p>查询使用了索引 并且需要返回的列 在该索引中已经全都被找到</p>
+<p>出现 using index condition 使用了索引 但是需要回表查询</p>
+<p>出现 using where using index 使用了索引 不需要回表查询</p>
+<ul>
+<li>前缀索引</li>
+</ul>
+<p>只将字符串的前缀简历索引 大大节约索引空间 提高索引效率</p>
+<p>例如 <code>create index index_name on table_name(ziduan(前缀个数));</code></p>
+<ul>
+<li>单列索引 联合索引</li>
+</ul>
+<p>如果存在多个查询条件 考虑针对查询字段简历索引时 建立联合索引</p>
+<p>索引设计原则</p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240530202732559.png" alt="image-20240530202732559"></p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\image-20240530203203363.png" alt="image-20240530203203363"></p>
+<p>数组比较</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Arrays.equals(sCount, pCount)) &#123;</span><br><span class="line">            ans.add(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Acting</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/06/MySQL/">http://example.com/2023/12/06/MySQL/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a><a class="post-meta__tags" href="/tags/mysql/">mysql</a></div><div class="post_share"><div class="social-share" data-image="/images/touxiang.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2023/12/15/SpringMVC%E5%AD%A6%E4%B9%A0/" title="springboot"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">springboot</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/12/20/MybatisPlus/" title="MybatisPlus框架"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-20</div><div class="title">MybatisPlus框架</div></div></a></div><div><a href="/2023/12/30/MySql%E9%AB%98%E7%BA%A7/" title="Mysql高级"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-30</div><div class="title">Mysql高级</div></div></a></div><div><a href="/2023/12/15/SpringMVC%E5%AD%A6%E4%B9%A0/" title="springboot"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-15</div><div class="title">springboot</div></div></a></div><div><a href="/2023/12/30/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/" title="微服务"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-30</div><div class="title">微服务</div></div></a></div><div><a href="/2023/12/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="网络编程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-30</div><div class="title">网络编程</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Acting</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%9F%BA%E7%A1%80%E7%AF%87%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">MySQL基础篇学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.1.</span> <span class="toc-text">访问数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">MYSQL数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DDL-%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.</span> <span class="toc-text">DDL 数据定义语言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.1.</span> <span class="toc-text">数据库操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.2.</span> <span class="toc-text">表操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.3.</span> <span class="toc-text">字段操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DML-%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E8%AF%AD%E8%A8%80"><span class="toc-number">1.3.</span> <span class="toc-text">DML  数据操作语言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE-INSERT"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">添加数据 INSERT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE-UPDATA"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">修改数据 UPDATA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE-DELETE"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">删除数据 DELETE</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DQL-%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80"><span class="toc-number">1.4.</span> <span class="toc-text">DQL 数据查询语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GROUP-BY-%E5%88%86%E7%BB%84%E5%AD%97%E6%AE%B5%E5%88%97%E8%A1%A8"><span class="toc-number">1.5.</span> <span class="toc-text">GROUP BY 分组字段列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.5.1.</span> <span class="toc-text">多表查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DCL-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9D%83%E9%99%90"><span class="toc-number">1.6.</span> <span class="toc-text">DCL 数据库权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E7%94%A8%E6%88%B7"><span class="toc-number">1.6.1.</span> <span class="toc-text">管理用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-number">1.6.2.</span> <span class="toc-text">约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.7.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">1.7.1.</span> <span class="toc-text">字符串函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-number">1.7.2.</span> <span class="toc-text">数值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">1.7.3.</span> <span class="toc-text">日期函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E5%87%BD%E6%95%B0"><span class="toc-number">1.7.4.</span> <span class="toc-text">流程函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E7%AF%87%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text">进阶篇学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-number">2.1.</span> <span class="toc-text">存储引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#InnoDB"><span class="toc-number">2.1.1.</span> <span class="toc-text">InnoDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MyISAM"><span class="toc-number">2.1.2.</span> <span class="toc-text">MyISAM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory"><span class="toc-number">2.1.3.</span> <span class="toc-text">Memory</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-number">2.2.</span> <span class="toc-text">索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%BB%93%E6%9E%84"><span class="toc-number">2.2.1.</span> <span class="toc-text">索引结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#B%E6%A0%91-%E5%A4%9A%E8%B7%AF%E5%B9%B3%E8%A1%A1%E6%9F%A5%E6%89%BE%E6%A0%91"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">B树  多路平衡查找树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hash%E7%B4%A2%E5%BC%95"><span class="toc-number">2.2.1.2.</span> <span class="toc-text">Hash索引</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.2.</span> <span class="toc-text">索引分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="toc-number">2.2.3.</span> <span class="toc-text">性能分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E4%BD%BF%E7%94%A8"><span class="toc-number">2.2.4.</span> <span class="toc-text">索引使用</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/git%E5%AD%A6%E4%B9%A0/" title="git基础操作">git基础操作</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/Linux%E5%AD%A6%E4%B9%A0/" title="Linux基础入门">Linux基础入门</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/MySql%E9%AB%98%E7%BA%A7/" title="Mysql高级">Mysql高级</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/Docker%E5%AD%A6%E4%B9%A0/" title="docker基础">docker基础</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/30/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/" title="微服务">微服务</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Acting</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
