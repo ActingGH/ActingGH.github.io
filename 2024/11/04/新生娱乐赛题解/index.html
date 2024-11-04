@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>实验室新生娱乐赛题解 | Acting个人博客</title><meta name="keywords" content="算法"><meta name="author" content="Acting"><meta name="copyright" content="Acting"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="实验室新生娱乐赛题解"><meta name="application-name" content="实验室新生娱乐赛题解"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="实验室新生娱乐赛题解"><meta property="og:url" content="http://example.com/2024/11/04/%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3/index.html"><meta property="og:site_name" content="Acting个人博客"><meta property="og:description" content="新生娱乐赛题解 兹所呈现之本题解，仅为个人针对此题所持观点，其既非官方所颁布之标准答案，亦未必为最优之解法。若阁下持有更佳之思路，诚邀参与讨论。 需特此说明者，本题所标注之难度，乃基于本套试题所设定之相对难度，并非该题实际固有之难度层级。 再者，虑及多数人惯常使用之编程语言状况，本套题解特选用 C"><meta property="og:locale" content="en"><meta property="og:image" content="http://example.com/images/touxiang.jpg"><meta property="article:author" content="Acting"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/touxiang.jpg"><meta name="description" content="新生娱乐赛题解 兹所呈现之本题解，仅为个人针对此题所持观点，其既非官方所颁布之标准答案，亦未必为最优之解法。若阁下持有更佳之思路，诚邀参与讨论。 需特此说明者，本题所标注之难度，乃基于本套试题所设定之相对难度，并非该题实际固有之难度层级。 再者，虑及多数人惯常使用之编程语言状况，本套题解特选用 C"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2024/11/04/%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ Java开发热爱者"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: Acting","link":"Link: ","source":"Source: Acting个人博客","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Acting个人博客',
+  title: '实验室新生娱乐赛题解',
+  postAI: '',
+  pageFillDescription: '新生娱乐赛题解, Medium 7-5 字母直方图, 题目：, 输入格式, 输出格式, 输入样例, 输出样例, 解析：, Medium 7-7 一元多项式的乘法与加法运算, 原题：, 输入格式, 输出格式, 输入样例, 输出样例, 解析, Hard 7-8 二分查找, 题目：, 输入格式, 输出格式, 输入样例, 输出样例, 解析：新生娱乐赛题解兹所呈现之本题解仅为个人针对此题所持观点其既非官方所颁布之标准答案亦未必为最优之解法若阁下持有更佳之思路诚邀参与讨论需特此说明者本题所标注之难度乃基于本套试题所设定之相对难度并非该题实际固有之难度层级再者虑及多数人惯常使用之编程语言状况本套题解特选用语言予以编写兹水平如狗啃屎若题解之中存在讹误之处敬祈不吝指正废话不多说开始看题字母直方图题目读入一个字符串对其中的字母按照不区分大小写的出现次数输出一个星号组成的直方图输入格式一行一个不超过字节的字符串可能含有空格输出格式若干行每行一个大写字母空格后接着一排星号字符星号数量与该字母的出现次数相同为了保证图形的美观只需要输出至少出现了次的字母如果字符串包含多个字母那么按照字母首次出现的顺序输出输入样例在这里给出一组输入例如输出样例在这里给出相应的输出例如解析常规思路遍历一遍字符串使用有顺序的将出现的字符和出现的次数统计然后顺序遍历如果的是字母并且的数值大于等于输出当然大多数同学使用语言并不包含于语言所以我们需要换一种思路使用二维数组存储字符的码和出现的频率感兴趣的同学可以提前了解遍历字符串使用二维数组存储对应的字符的码和出现的次数在遍历的同时需要判断该字符的大小写可以规定为存储大写字母的码随后开始遍历数组当某个字符的出现频率符合要求输出输出先将二维数组存储的码转化为大写字母然后使用循环输出随后换行包含函数的头文件定义输入字符串的最大长度计算字符串长度创建一个二维数组来存储字符和计数遍历字符串统计字符出现次数忽略空格查找字符是否已经在数组中这里为了简化没有实现查找优化如果字符已经在数组中则增加计数如果字符不在数组中则添加它如果字符是小写字母则转换为大写字母打印出现次数大于或等于的字符及其星号表示一元多项式的乘法与加法运算原题设计函数分别求两个一元多项式的乘积与和输入格式输入分行每行分别先给出多项式非零项的个数再以指数递降方式输入一个多项式非零项系数和指数绝对值均为不超过的整数数字间以空格分隔输出格式输出分行分别以指数递降方式输出乘积多项式以及和多项式非零项的系数和指数数字间以空格分隔但结尾不能有多余空格零多项式应输出输入样例输出样例解析模拟大部分同学可能没有理解第一个多项式第二个多项式根据本题的样例参考此公式得到的这两个多项式先进行相乘降序输出幂最高的系数和指数例如以上两个多项式相乘的最高次幂的项分别相乘结果中系数是幂指数是所以第一行前两个输出的是思路一定义两个二维数组分别存储两个多项式的指数和系数乘法使用嵌套循环系数相乘指数相加加法使用查找相同的指数指数相同系数相加来不及了上思路二思路二定义一个结构体存储每一项的系数和指数使用结构体存储同样的乘法是互相乘所以使用嵌套循环加法是只有相同次幂的项才可以过系数指数读取第一个多项式开辟一个数组空间数组的每个节点存储的是一个结构体读取第二个多项式计算乘积开辟数组空间存储结果将新系数加到中相应指数的位置上计算和开辟数组空间输出乘积输出和释放内存二分查找题目利用二分查找找出所给出的数在数组中的下标输入格式第一行输入和表示数组有个数据表示要对个数进行查找输出格式所有输出在一行完成行末没有多余空格和多余回车输入样例输出样例解析二分经典算法二分查找只能用于有序数列即有单调性的序列二分查找的主要原理就是不断通过取中间值缩小范围直到找到其时间复杂度为题目没有直接说明给出的数组是有序的是一个隐含条件既然是有序的数列就不需要每次查找都从头开始遍历只需要比对中间的值以本题为例给出一个升序的数组查找在数组中的位置只需要每次用比对一下中间的数如果中间的数小于要找的那么一定在中间的数的右边反之在左边大部分同学没通过的原因是时间超出范围切记二分查找只能用于有序数列二分查找的主要原理就是不断通过取中间缩小范围直到找到在这里设置数组避免不必要的错误三个判断是核心题目要求的是打印下标格式打印找到直接跳出否则无限循环出现错误',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-04 20:14:35',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Acting个人博客</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-link"></use></svg><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 留言板</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/images/weixinpay.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="/images/weixinpay.jpg"/></a><div class="post-qr-code-desc">微信</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>1</sup></a><a href="/tags/Spring-Boot/" style="font-size: 1.05rem;">Spring-Boot<sup>1</sup></a><a href="/tags/Spring-Cloud/" style="font-size: 1.05rem;">Spring-Cloud<sup>1</sup></a><a href="/tags/TCP/" style="font-size: 1.05rem;">TCP<sup>1</sup></a><a href="/tags/UDP/" style="font-size: 1.05rem;">UDP<sup>1</sup></a><a href="/tags/docker/" style="font-size: 1.05rem;">docker<sup>1</sup></a><a href="/tags/git/" style="font-size: 1.05rem;">git<sup>1</sup></a><a href="/tags/java/" style="font-size: 1.05rem;">java<sup>6</sup></a><a href="/tags/mysql/" style="font-size: 1.05rem;">mysql<sup>3</sup></a><a href="/tags/springMVC/" style="font-size: 1.05rem;">springMVC<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">基础<sup>1</sup></a><a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.05rem;">微信小程序<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.05rem;">算法<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">November 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">September 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">December 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>算法</span></a></span></div></div><h1 class="post-title" itemprop="name headline">实验室新生娱乐赛题解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-11-04T08:34:20.000Z" title="Created 2024-11-04 16:34:20">2024-11-04</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-11-04T12:14:35.420Z" title="Updated 2024-11-04 20:14:35">2024-11-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">Word count:</span><span class="word-count" title="文章字数">2.4k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">Reading time:</span><span>9min</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="实验室新生娱乐赛题解"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">Post View:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2024/11/04/%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3/"><header><a href="/tags/%E7%AE%97%E6%B3%95/" tabindex="-1" itemprop="url">算法</a><h1 id="CrawlerTitle" itemprop="name headline">实验室新生娱乐赛题解</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Acting</span><time itemprop="dateCreated datePublished" datetime="2024-11-04T08:34:20.000Z" title="Created 2024-11-04 16:34:20">2024-11-04</time><time itemprop="dateCreated datePublished" datetime="2024-11-04T12:14:35.420Z" title="Updated 2024-11-04 20:14:35">2024-11-04</time></header><h1 id="新生娱乐赛题解"><a href="#新生娱乐赛题解" class="headerlink" title="新生娱乐赛题解"></a>新生娱乐赛题解</h1><blockquote>
+<p>兹所呈现之本题解，仅为个人针对此题所持观点，其既非官方所颁布之标准答案，亦未必为最优之解法。若阁下持有更佳之思路，诚邀参与讨论。</p>
+<p>需特此说明者，本题所标注之难度，乃基于本套试题所设定之相对难度，并非该题实际固有之难度层级。</p>
+<p>再者，虑及多数人惯常使用之编程语言状况，本套题解特选用 C 语言予以编写。兹C水平如狗啃屎，若题解之中存在讹误之处，敬祈不吝指正。</p>
+</blockquote>
+<p>废话不多说，开始看题：</p>
+<h2 id="Medium-7-5-字母直方图"><a href="#Medium-7-5-字母直方图" class="headerlink" title="Medium 7-5 字母直方图"></a>Medium 7-5 字母直方图</h2><h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p>读入一个字符串，对其中的字母按照不区分大小写的出现次数输出一个星号组成的直方图。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h4><p>一行，一个不超过100字节的字符串，可能含有空格。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h4><p>若干行，每行一个大写字母，空格后接着一排星号（<code>*</code>字符），星号数量与该字母的出现次数相同。为了保证图形的美观，只需要输出至少出现了2次的字母。<strong>如果字符串包含多个字母，那么按照字母首次出现的顺序输出。</strong></p>
+<h4 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h4><p>在这里给出一组输入。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Anika, buy a banana.</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h4><p>在这里给出相应的输出。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">A ******</span><br><span class="line">N ***</span><br><span class="line">B **</span><br></pre></td></tr></table></figure>
+
+<h3 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h3><p>常规思路：遍历一遍字符串，使用有顺序的Map将出现的字符和出现的次数统计，然后顺序遍历Map，如果Map的key是字母并且value的数值大于等于2 输出。</p>
+<p>当然，大多数同学使用C语言，LinkedHashMap 并不包含于C语言，所以我们需要换一种思路：使用二维数组存储字符的ASCII码和出现的频率。（感兴趣的同学可以提前了解）</p>
+<ul>
+<li>遍历字符串，使用二维数组存储对应的字符的ASCII码和出现的次数。在遍历的同时需要判断该字符的大小写，可以规定为存储大写字母的ASCII码。</li>
+<li>随后开始遍历数组，当某个字符的出现频率符合要求，输出。</li>
+<li>输出：先将二维数组存储的ASCII码转化为大写字母 然后使用循环输出 <code>*</code> 随后换行。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ctype.h&gt;</span>  <span class="comment">// 包含toupper函数的头文件  </span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_INPUT_LEN 1000  <span class="comment">// 定义输入字符串的最大长度  </span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">char</span> arr[MAX_INPUT_LEN];</span><br><span class="line">    	<span class="built_in">scanf</span>(<span class="string">&quot;%[^\n]&quot;</span>,&amp;arr);</span><br><span class="line">        <span class="type">int</span> n = <span class="built_in">strlen</span>(arr);  <span class="comment">// 计算字符串长度  </span></span><br><span class="line">        <span class="type">int</span> temp[n][<span class="number">2</span>];       <span class="comment">// 创建一个二维数组来存储字符和计数  </span></span><br><span class="line">        <span class="type">int</span> idx = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 遍历字符串，统计字符出现次数  </span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="type">char</span> x = arr[i];</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="string">&#x27; &#x27;</span>) <span class="keyword">continue</span>;  <span class="comment">// 忽略空格  </span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 查找字符是否已经在 temp 数组中（这里为了简化，没有实现查找优化）  </span></span><br><span class="line">            <span class="type">int</span> found = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; idx; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (temp[j][<span class="number">0</span>] == x) &#123;</span><br><span class="line">                    temp[j][<span class="number">1</span>]++;  <span class="comment">// 如果字符已经在 temp 数组中，则增加计数  </span></span><br><span class="line">                    found = <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 如果字符不在 temp 数组中，则添加它  </span></span><br><span class="line">            <span class="keyword">if</span> (!found) &#123;</span><br><span class="line">                temp[idx][<span class="number">0</span>] = x;</span><br><span class="line">                <span class="comment">// 如果字符是小写字母，则转换为大写字母  </span></span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">islower</span>(x)) &#123;</span><br><span class="line">                    temp[idx][<span class="number">0</span>] = (<span class="type">int</span>)<span class="built_in">toupper</span>(x);</span><br><span class="line">                &#125;</span><br><span class="line">                temp[idx][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">                idx++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 打印出现次数大于或等于 2 的字符及其星号表示  </span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; idx; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temp[i][<span class="number">1</span>] &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%c: &quot;</span>, temp[i][<span class="number">0</span>]);</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; temp[i][<span class="number">1</span>]; j++) &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;*&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Medium-7-7-一元多项式的乘法与加法运算"><a href="#Medium-7-7-一元多项式的乘法与加法运算" class="headerlink" title="Medium 7-7 一元多项式的乘法与加法运算"></a>Medium <strong>7-7 一元多项式的乘法与加法运算</strong></h2><h3 id="原题："><a href="#原题：" class="headerlink" title="原题："></a>原题：</h3><p>设计函数分别求两个一元多项式的乘积与和。</p>
+<h4 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式:"></a>输入格式:</h4><p>输入分2行，每行分别先给出多项式非零项的个数，再以指数递降方式输入一个多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。</p>
+<h4 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式:"></a>输出格式:</h4><p>输出分2行，分别以指数递降方式输出乘积多项式以及和多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。零多项式应输出<code>0 0</code>。</p>
+<h4 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例:"></a>输入样例:</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 3 4 -5 2  6 1  -2 0</span><br><span class="line">3 5 20  -7 4  3 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例:"></a>输出样例:</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">15 24 -25 22 30 21 -10 20 -21 8 35 6 -33 5 14 4 -15 3 18 2 -6 1</span><br><span class="line">5 20 -4 4 -5 2 9 1 -2 0</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>模拟。大部分同学可能没有理解</p>
+<p>第一个多项式：</p>
+<p>$$3x^{4}+(-5)x^{2}+6x^{11}+(-2)x^{0}$$</p>
+<p>第二个多项式</p>
+<p>$$5x^{20}+(-7)x^{4}+3x^{1}$$</p>
+<p>根据本题的样例参考此公式。</p>
+<p>得到的这两个多项式，先进行相乘，降序输出幂最高的系数和指数，例如 以上两个多项式相乘的最高次幂的项分别相乘 <code>3x^4 * 5x^20</code> 结果中系数是15 幂指数是 24 所以第一行前两个输出的是 <code>15 25</code> </p>
+<p>思路一：定义两个二维数组，分别存储两个多项式的指数和系数 ，乘法： 使用嵌套循环 系数相乘 指数相加 ；加法： 使用查找相同的指数，指数相同系数相加 。来不及了上思路二。</p>
+<p>思路二：定义一个结构体 ，存储每一项的系数和指数，使用结构体存储；同样的乘法是互相乘，所以使用嵌套循环，加法是只有相同次幂的项才可以过。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> coef; <span class="comment">//系数</span></span><br><span class="line">    <span class="type">int</span> <span class="built_in">exp</span>;  <span class="comment">//指数</span></span><br><span class="line">&#125; Term;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> n1, n2;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读取第一个多项式</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n1);</span><br><span class="line">    Term *poly1 = (Term *)<span class="built_in">malloc</span>(n1 * <span class="keyword">sizeof</span>(Term)); <span class="comment">//开辟一个数组空间 数组的每个节点存储的是一个结构体</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n1; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;poly1[i].coef, &amp;poly1[i].<span class="built_in">exp</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读取第二个多项式</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n2);</span><br><span class="line">    Term *poly2 = (Term *)<span class="built_in">malloc</span>(n2 * <span class="keyword">sizeof</span>(Term));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n2; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;poly2[i].coef, &amp;poly2[i].<span class="built_in">exp</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算乘积</span></span><br><span class="line">    <span class="type">int</span> maxExpMul = poly1[<span class="number">0</span>].<span class="built_in">exp</span> + poly2[<span class="number">0</span>].<span class="built_in">exp</span>;</span><br><span class="line">    Term *mulResult = (Term *)<span class="built_in">calloc</span>(maxExpMul + <span class="number">1</span>, <span class="keyword">sizeof</span>(Term)); <span class="comment">//开辟数组空间存储结果</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n1; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n2; j++) &#123;</span><br><span class="line">            <span class="type">int</span> newExp = poly1[i].<span class="built_in">exp</span> + poly2[j].<span class="built_in">exp</span>;</span><br><span class="line">            <span class="type">int</span> newCoef = poly1[i].coef * poly2[j].coef;</span><br><span class="line">            mulResult[newExp].coef += newCoef; <span class="comment">//将新系数加到mulResult中相应指数的位置上。</span></span><br><span class="line">            mulResult[newExp].<span class="built_in">exp</span> = newExp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算和</span></span><br><span class="line">    <span class="type">int</span> maxExpAdd = poly1[<span class="number">0</span>].<span class="built_in">exp</span> &gt; poly2[<span class="number">0</span>].<span class="built_in">exp</span> ? poly1[<span class="number">0</span>].<span class="built_in">exp</span> : poly2[<span class="number">0</span>].<span class="built_in">exp</span>;</span><br><span class="line">    Term *sumResult = (Term *)<span class="built_in">calloc</span>(maxExpAdd + <span class="number">1</span>, <span class="keyword">sizeof</span>(Term)); <span class="comment">//开辟数组空间</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n1; i++) &#123;</span><br><span class="line">        sumResult[poly1[i].<span class="built_in">exp</span>].coef += poly1[i].coef;</span><br><span class="line">        sumResult[poly1[i].<span class="built_in">exp</span>].<span class="built_in">exp</span> = poly1[i].<span class="built_in">exp</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n2; i++) &#123;</span><br><span class="line">        sumResult[poly2[i].<span class="built_in">exp</span>].coef += poly2[i].coef;</span><br><span class="line">        sumResult[poly2[i].<span class="built_in">exp</span>].<span class="built_in">exp</span> = poly2[i].<span class="built_in">exp</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出乘积</span></span><br><span class="line">    <span class="type">int</span> first = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = maxExpMul; i &gt;= <span class="number">0</span>; i--) &#123; </span><br><span class="line">        <span class="keyword">if</span> (mulResult[i].coef != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!first) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d&quot;</span>, mulResult[i].coef, mulResult[i].<span class="built_in">exp</span>);</span><br><span class="line">            first = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (first) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;0 0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出和</span></span><br><span class="line">    first = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = maxExpAdd; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sumResult[i].coef != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!first) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d&quot;</span>, sumResult[i].coef, sumResult[i].<span class="built_in">exp</span>);</span><br><span class="line">            first = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (first) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;0 0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 释放内存</span></span><br><span class="line">    <span class="built_in">free</span>(poly1);</span><br><span class="line">    <span class="built_in">free</span>(poly2);</span><br><span class="line">    <span class="built_in">free</span>(mulResult);</span><br><span class="line">    <span class="built_in">free</span>(sumResult);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Hard-7-8-二分查找"><a href="#Hard-7-8-二分查找" class="headerlink" title="Hard 7-8 二分查找"></a>Hard 7-8 二分查找</h2><h3 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h3><p>利用二分查找找出所给出的数在数组中的下标</p>
+<h4 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式:"></a>输入格式:</h4><p>第一行输入n和m表示数组有n个数据，m表示要对m个数进行查找</p>
+<h4 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式:"></a>输出格式:</h4><p>所有输出在一行完成，行末没有多余空格和多余回车。</p>
+<h4 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例:"></a>输入样例:</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">5 5</span><br><span class="line">1 2 3 4 5</span><br><span class="line">1 2 3 4 5</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="输出样例-2"><a href="#输出样例-2" class="headerlink" title="输出样例:"></a>输出样例:</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">0 1 2 3 4</span><br></pre></td></tr></table></figure>
+
+<h3 id="解析：-1"><a href="#解析：-1" class="headerlink" title="解析："></a>解析：</h3><p>二分，经典算法。“二分查找只能用于有序数列，即有单调性的序列。二分查找的主要原理就是，不断通过取中间值，缩小范围，直到找到。其时间复杂度为O（logn）。” 题目没有直接说明给出的数组是有序的，是一个隐含条件；</p>
+<p>既然是有序的数列，就不需要每次查找都从头开始遍历，只需要比对中间的值。以本题为例，给出一个<strong>升序</strong>的数组，查找x在数组中的位置，只需要每次用x比对一下中间的数，如果中间的数小于要找的x，那么x一定在中间的数的右边。反之，在左边。</p>
+<p>大部分同学没通过的原因是时间超出范围。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//切记二分查找只能用于有序数列。</span></span><br><span class="line"><span class="comment">//二分查找的主要原理就是，不断通过取中间，缩小范围，直到找到。</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="type">int</span> arr[n];<span class="comment">//在这里设置数组，避免不必要的错误。</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">        <span class="type">int</span> value=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;value);</span><br><span class="line">        <span class="type">int</span> left=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right=n<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">            <span class="type">int</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(arr[mid]&gt;value)&#123;</span><br><span class="line">                right=mid<span class="number">-1</span>;<span class="comment">//三个判断是核心。</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(arr[mid]&lt;value)&#123;</span><br><span class="line">                left=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(arr[mid]==value)&#123;</span><br><span class="line">                <span class="keyword">if</span>(j==m<span class="number">-1</span>)&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,mid);<span class="comment">//题目要求的是打印下标</span></span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;<span class="comment">//格式打印</span></span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,mid);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;<span class="comment">//找到直接跳出，否则无限循环，出现错误。</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/touxiang.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/touxiang.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Acting</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2024/11/04/%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2024/11/04/%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3/')">实验室新生娱乐赛题解</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/images/weixinpay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/weixinpay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2024/11/04/%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=实验室新生娱乐赛题解&amp;url=http://example.com/2024/11/04/%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>算法<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="/images/touxiang.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/09/26/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/weixinxcx.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">微信小程序开发</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Acting</h1><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/ActingGH" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://blog.csdn.net/Ok6668" target="_blank" title="CSDN"><i class="anzhiyufont anzhiyu-icon-csdn"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>Announcement</span></div><div class="announcement_content">欢迎光临~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">新生娱乐赛题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-7-5-%E5%AD%97%E6%AF%8D%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">Medium 7-5 字母直方图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">输入格式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">输出格式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">输入样例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">输出样例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%EF%BC%9A"><span class="toc-number">1.1.2.</span> <span class="toc-text">解析：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medium-7-7-%E4%B8%80%E5%85%83%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E4%B9%98%E6%B3%95%E4%B8%8E%E5%8A%A0%E6%B3%95%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.</span> <span class="toc-text">Medium 7-7 一元多项式的乘法与加法运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E9%A2%98%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">原题：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-1"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">输入格式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">输出格式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B-1"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">输入样例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">输出样例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-number">1.2.2.</span> <span class="toc-text">解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hard-7-8-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="toc-number">1.3.</span> <span class="toc-text">Hard 7-8 二分查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-2"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">输入格式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-2"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">输出格式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B-2"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">输入样例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-2"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">输出样例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%EF%BC%9A-1"><span class="toc-number">1.3.2.</span> <span class="toc-text">解析：</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/04/%E6%96%B0%E7%94%9F%E5%A8%B1%E4%B9%90%E8%B5%9B%E9%A2%98%E8%A7%A3/" title="实验室新生娱乐赛题解">实验室新生娱乐赛题解</a><time datetime="2024-11-04T08:34:20.000Z" title="Created 2024-11-04 16:34:20">2024-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/26/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/" title="微信小程序开发"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/weixinxcx.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="微信小程序开发"/></a><div class="content"><a class="title" href="/2024/09/26/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/" title="微信小程序开发">微信小程序开发</a><time datetime="2024-09-25T16:00:00.000Z" title="Created 2024-09-26 00:00:00">2024-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/30/Docker%E5%AD%A6%E4%B9%A0/" title="docker基础"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/dpcker.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker基础"/></a><div class="content"><a class="title" href="/2023/12/30/Docker%E5%AD%A6%E4%B9%A0/" title="docker基础">docker基础</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/30/Linux%E5%AD%A6%E4%B9%A0/" title="Linux基础入门"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux基础入门"/></a><div class="content"><a class="title" href="/2023/12/30/Linux%E5%AD%A6%E4%B9%A0/" title="Linux基础入门">Linux基础入门</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/30/MySql%E9%AB%98%E7%BA%A7/" title="Mysql高级"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/mysql.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mysql高级"/></a><div class="content"><a class="title" href="/2023/12/30/MySql%E9%AB%98%E7%BA%A7/" title="Mysql高级">Mysql高级</a><time datetime="2023-12-30T08:34:20.000Z" title="Created 2023-12-30 16:34:20">2023-12-30</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="Acting" target="_blank">Acting</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/ActingGH" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">11</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">13</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-link"></use></svg><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 留言板</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>1</sup></a><a href="/tags/Spring-Boot/" style="font-size: 0.88rem;">Spring-Boot<sup>1</sup></a><a href="/tags/Spring-Cloud/" style="font-size: 0.88rem;">Spring-Cloud<sup>1</sup></a><a href="/tags/TCP/" style="font-size: 0.88rem;">TCP<sup>1</sup></a><a href="/tags/UDP/" style="font-size: 0.88rem;">UDP<sup>1</sup></a><a href="/tags/docker/" style="font-size: 0.88rem;">docker<sup>1</sup></a><a href="/tags/git/" style="font-size: 0.88rem;">git<sup>1</sup></a><a href="/tags/java/" style="font-size: 0.88rem;">java<sup>6</sup></a><a href="/tags/mysql/" style="font-size: 0.88rem;">mysql<sup>3</sup></a><a href="/tags/springMVC/" style="font-size: 0.88rem;">springMVC<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 0.88rem;">基础<sup>1</sup></a><a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 0.88rem;">微信小程序<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 0.88rem;">算法<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Acting 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script async src="//at.alicdn.com/t/c/font_4716507_olazpxeb90k.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
