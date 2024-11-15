@@ -258,29 +258,6 @@
     
     
     <entry>
-      <title>网络编程</title>
-      <link href="/2023/12/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-      <url>/2023/12/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
-      
-        <content type="html"><![CDATA[<h1 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h1><h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>面向无连接协议 速度夸 有大小限制一次最多64k 数据不安全 易丢失数据</p><p>在线视频 网络通话</p><h4 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h4><ul><li>创建发送端的DatagramSocket对象<ul><li>参数传递 端口号</li></ul></li><li>数据打包<ul><li>DatagramPackage</li></ul></li><li>发送资源</li><li>释放资源</li></ul><p><img src="/images/typora-user-images/image-20240601212258135.png" alt="image-20240601212258135"></p><h4 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h4><ul><li>创建接收端的DatagramSocket对象<ul><li>一定要绑定端口</li></ul></li><li>接收打包好的数据<ul><li>程序在此是阻塞的一直等待直到接收到数据</li><li>receive 创建接收包 传递数组</li></ul></li><li>解析数据包</li><li>释放资源</li></ul><img src="/images/typora-user-images/image-20240601212806756.png" alt="image-20240601212806756" style="zoom:100%;" /><h4 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h4><p>单播</p><p>组播 对象创建 MulticastSocket 接收端 划定组播地址 发送端 确定组播地址 </p><p>广播  255.255.255.255</p><h3 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h3><p>面向连接通信协议 速度慢 没有大小限制 数据安全</p><p>下载软件 文字聊天 发送邮件</p><p>两端个建立socket对象 通过io流来产生通信 </p><p><img src="/images/typora-user-images/image-20240601215021912.png" alt="image-20240601215021912"></p><p>中文乱码问题 <img src="/images/typora-user-images/image-20240601215838990.png" alt="image-20240601215838990"></p><p>字节流转化成字符流</p><p>三次握手 保证建立连接</p><p>四次挥手 确保连接断开 且数据处理完毕</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-            <tag> UDP </tag>
-            
-            <tag> TCP </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>微服务</title>
       <link href="/2023/12/30/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/"/>
       <url>/2023/12/30/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/</url>
@@ -300,6 +277,29 @@
             <tag> java </tag>
             
             <tag> Spring-Cloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网络编程</title>
+      <link href="/2023/12/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+      <url>/2023/12/30/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h1><h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>面向无连接协议 速度夸 有大小限制一次最多64k 数据不安全 易丢失数据</p><p>在线视频 网络通话</p><h4 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h4><ul><li>创建发送端的DatagramSocket对象<ul><li>参数传递 端口号</li></ul></li><li>数据打包<ul><li>DatagramPackage</li></ul></li><li>发送资源</li><li>释放资源</li></ul><p><img src="/images/typora-user-images/image-20240601212258135.png" alt="image-20240601212258135"></p><h4 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h4><ul><li>创建接收端的DatagramSocket对象<ul><li>一定要绑定端口</li></ul></li><li>接收打包好的数据<ul><li>程序在此是阻塞的一直等待直到接收到数据</li><li>receive 创建接收包 传递数组</li></ul></li><li>解析数据包</li><li>释放资源</li></ul><img src="/images/typora-user-images/image-20240601212806756.png" alt="image-20240601212806756" style="zoom:100%;" /><h4 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h4><p>单播</p><p>组播 对象创建 MulticastSocket 接收端 划定组播地址 发送端 确定组播地址 </p><p>广播  255.255.255.255</p><h3 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h3><p>面向连接通信协议 速度慢 没有大小限制 数据安全</p><p>下载软件 文字聊天 发送邮件</p><p>两端个建立socket对象 通过io流来产生通信 </p><p><img src="/images/typora-user-images/image-20240601215021912.png" alt="image-20240601215021912"></p><p>中文乱码问题 <img src="/images/typora-user-images/image-20240601215838990.png" alt="image-20240601215838990"></p><p>字节流转化成字符流</p><p>三次握手 保证建立连接</p><p>四次挥手 确保连接断开 且数据处理完毕</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> UDP </tag>
+            
+            <tag> TCP </tag>
             
         </tags>
       
